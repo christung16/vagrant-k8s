@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+    - initial_kube_cluster
+    - setup_container_networking
+  
+  tasks:
+  - name: kube_join
+    import_tasks: 7_generate_kube_join.yml

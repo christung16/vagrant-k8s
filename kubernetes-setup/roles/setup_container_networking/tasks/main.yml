@@ -1,0 +1,5 @@
+---
+# tasks file for setup_container_networking
+  - name: Common tasks
+    import_tasks: 6_setup_container_networking.yml  
+

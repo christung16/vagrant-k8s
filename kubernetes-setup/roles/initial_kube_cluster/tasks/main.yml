@@ -1,0 +1,6 @@
+---
+# tasks file for initial_kube_cluster
+  - name: Common tasks
+    import_tasks: 4_initialize_kube_cluster.yml
+  - name: Common tasks
+    import_tasks: 5_setup_kube_config.yml

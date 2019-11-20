@@ -1,0 +1,7 @@
+  - name: Setup kubeconfig for vagrant user
+    command: "{{ item }}"
+    with_items:
+      - mkdir -p /home/vagrant/.kube
+      - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+      - chown vagrant:docker /home/vagrant/.kube/config
+      - chown vagrant:docker -R /home/vagrant/.kube

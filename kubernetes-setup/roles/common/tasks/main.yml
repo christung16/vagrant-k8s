@@ -1,0 +1,8 @@
+---
+# tasks file for common
+  - name: Common tasks
+    import_tasks: 1_install_docker_dependent.yml
+  - name: Common tasks
+    import_tasks: 2_install_kube.yml
+  - name: Common tasks
+    import_tasks: 3_swap_disable.yml
