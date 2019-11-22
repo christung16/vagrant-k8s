@@ -17,9 +17,11 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "ubuntu/xenial64"
   config.ssh.insert_key = false
+  config.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
   config.vm.provider "virtualbox" do |v|
       v.memory = 2048
       v.cpus = 2
+      v.customize ["modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 
   config.vm.define "k8s-master" do |master|
