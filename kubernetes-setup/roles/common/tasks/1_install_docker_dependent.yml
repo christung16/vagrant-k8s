@@ -10,6 +10,7 @@
       - curl
       - gnupg-agent
       - software-properties-common
+      - python3-pip
 
   - name: Add an apt signing key for Docker
     apt_key:
@@ -33,6 +34,16 @@
       - containerd.io
     notify:
       - docker status
+
+  - name: pip install kubernetes openshift python3 module
+    pip:
+      name: "{{ packages }}"
+      executable: pip3
+      state: present
+    vars:
+      packages:
+        - kubernetes
+        - openshift
 
   - name: Add vagrant user to docker group
     user:
